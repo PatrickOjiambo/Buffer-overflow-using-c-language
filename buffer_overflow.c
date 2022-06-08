@@ -28,6 +28,6 @@ These types of program crashes are fairly common—think of all of the
 times a program has crashed or blue-screened on you. The programmer’s
 mistake is one of omission—there should be a length check or restriction on
 the user-supplied input. These kinds of mistakes are easy to make and can be
-difficult to spot. In fact, the notesearch.c program on page 93 contains a buffer
-overflow bug. You might not have noticed this until right now, even if you
-were already familiar with C.*/
+difficult to spot. Program crashes are annoying, but in the hands of a hacker they can
+become downright dangerous. A knowledgeable hacker can take control of a
+program as it crashes, with some surprising results. My next code on exploit_notesearch.c demonstrates how program crash can be advantageous to a hacker.*/
