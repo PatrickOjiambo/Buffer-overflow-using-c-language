@@ -14,3 +14,20 @@ int main(int argc, char *argv[]) {
  printf("[AFTER] buffer_one is at %p and contains \'%s\'\n", buffer_one, buffer_one);
  printf("[AFTER] value is at %p and is %d (0x%08x)\n", &value, value, value);
 }
+/*--By now, you should be able to read the source code above and figure out
+what the program does. After compilation in the sample output below, we try
+to copy ten bytes from the first command-line argument into buffer_two, which
+only has eight bytes allocated for it.
+--Notice that buffer_one is located directly after buffer_two in memory, so
+when ten bytes are copied into buffer_two, the last two bytes of 90 overflow
+into buffer_one and overwrite whatever was there.
+A larger buffer will naturally overflow into the other variables, but if a large
+enough buffer is used, the program will crash and die.
+---
+These types of program crashes are fairly common—think of all of the
+times a program has crashed or blue-screened on you. The programmer’s
+mistake is one of omission—there should be a length check or restriction on
+the user-supplied input. These kinds of mistakes are easy to make and can be
+difficult to spot. In fact, the notesearch.c program on page 93 contains a buffer
+overflow bug. You might not have noticed this until right now, even if you
+were already familiar with C.*/
